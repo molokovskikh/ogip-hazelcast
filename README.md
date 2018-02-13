@@ -1,20 +1,20 @@
 #Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+Данный репозиторий предназначени для развертывания сетевого кластера Hazelcast, а также консольной утилиты управляения и мониторинга им.
 
-#Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+#Выполните следующие шаги
 
-#Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+1.	Склонируйте репозиторий на хост который будет нодой кластера
+2.	Запустите скрипт symlink.sh, который создаст псевдонимы для команд (посмотрите содержимое этого файла, сначала осуществляется сборка с помощью gradle)
+3.	Для включения ноды кластера необходимо выполнить команду hazelcast
+4.	Для запуска консольной утилиты необходимо выполнить команду hazelcast-cli
+5.      Файлы конфигураций можно найти в каталогах (hazelcast/src/main/resources/hazelcast.xml) для ноды, (hazelcast-cli/src/main/resources/hazelcast-cli.xml) для консольного клиента
+6.      После изменения xml-файлов конфигурации необходимо пересобрать поставку, делается это из соответсвуещего каталога
 
-#Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+#Для кластера
+- cd hazelcast
+- ./gradlew installDist
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+#Для клиента
+- cd hazelcast-cli
+- ./gradlew installDist
+
