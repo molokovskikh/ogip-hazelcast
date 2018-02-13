@@ -1,0 +1,15 @@
+
+apply plugin: 'java'
+apply plugin: 'application' 
+
+//mainClassName = "com.hazelcast.console.ConsoleApp"
+mainClassName = "com.hazelcast.core.server.StartServer"
+//applicationDefaultJvmArgs = ["-Xms2G", "-Xmx4G"]
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile "com.hazelcast:hazelcast-all:3.5.4"
+}
