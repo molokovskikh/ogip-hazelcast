@@ -1,0 +1,23 @@
+<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-2.0.xsd"
+           xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <group>
+        <name>devogip</name>
+        <password>devogip</password>
+    </group>
+    <network>
+        <port auto-increment="false">5701</port>
+        <reuse-address>true</reuse-address>
+        <join>
+            <multicast enabled="false"></multicast>
+            <tcp-ip enabled="true">
+		<member>10.100.9.127</member>
+                <member>10.100.9.128</member>
+            </tcp-ip>
+        </join>
+    </network>
+    <map name="tokens"></map>
+    <map name="user-sessions"></map>
+
+</hazelcast>
